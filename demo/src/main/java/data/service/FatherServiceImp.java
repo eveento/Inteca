@@ -32,7 +32,8 @@ public class FatherServiceImp implements FatherService{
 	}
 
 	@Override
-	public List<Father> getFatherByFamily(int family) {
+	public Father getFatherByFamily(int family) {
+		
 		return fatherOwnRepository.getFatherByFamily(family);
 	}
 

@@ -40,7 +40,7 @@ public class FatherController {
     }
     
     @RequestMapping(value="/findbyfamily/{family}")
-    public List<Father> getFatherByFamily(@PathVariable int family){
+    public Father getFatherByFamily(@PathVariable int family){
         return fatherService.getFatherByFamily(family);
     }
     
