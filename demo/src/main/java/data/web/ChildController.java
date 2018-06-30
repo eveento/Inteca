@@ -3,6 +3,7 @@ package data.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,11 @@ import data.service.ChildrenService;
 
 @RestController
 @RequestMapping(value = "/child")
+@CrossOrigin(origins="*")
 public class ChildController {
 
 	@Autowired
-    ChildrenService childrenService;
+    private ChildrenService childrenService;
 
     @RequestMapping(value="", method=RequestMethod.POST)
     public Children createChild(@RequestBody Children children){

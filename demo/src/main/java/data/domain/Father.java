@@ -1,11 +1,16 @@
 package data.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Father")
-public class Father extends Person{
+public class Father {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Basic(optional = false)
+	@Column(name = "id")
+	@NotNull
 	private long id;
 	@Column (name="family")
 	private int family;
@@ -18,6 +23,7 @@ public class Father extends Person{
 	@Column(name="data")
 	private String data;
 	
+
 	public Father() {}
 	
 	public Father(long id, int family, String name, String surname, String pesel,String data) {

@@ -1,0 +1,31 @@
+<div class="container" *ngIf="showFamilyMembers">
+  <h1>Fathers detail:</h1>
+  <ul *ngFor="let father of father$">
+    <li>Name: {{father.name}}</li>
+    <li>Surname: {{father.surname}}</li>
+    <li>Pesel: {{father.pesel}}</li>
+    <li>Birth day: {{father.data}}</li>
+    <!-- <li>Family: {{father.family}}</li> -->
+  </ul>
+  <h1>Children detail:</h1>
+  <ul *ngFor="let child of child$">
+    <li>Name: {{child.name}}</li>
+    <li>Surname: {{child.surname}}</li>
+    <li>Pesel: {{child.pesel}}</li>
+    <li>Birth day: {{child.data}}</li>
+    <!-- <li>Family: {{child.family}}</li> -->
+    <li>Sex: {{child.sex}}</li>
+  </ul>
+</div>
+
+<div class="FailyContainer">
+    <form action="POST" #submitFamilyId="ngForm" class="jumbotron" (ngSubmit)="submitFamilyId">
+    <div class="form-group">  
+    <label for="idFamily">Input family id which you would like find</label>
+      <input type="number" class="form-control" [(ngModel)]="idfamily" name="idFamily" required #idFamily="ngModel">
+      <div class="alert alert-danger" *ngIf="idFamily.touched && !idFamily.valid">
+          <div *ngIf="idFamily.errors.required">Family is required</div>
+      </div></div>
+    <button type="submit" class="btn btn-default" [disabled]="!submitFamilyId.form.valid" (click)="getFamimy()">Submit</button>
+    </form>
+</div>

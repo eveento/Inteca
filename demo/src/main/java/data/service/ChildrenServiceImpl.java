@@ -12,9 +12,9 @@ import data.domain.Children;
 @Transactional
 public class ChildrenServiceImpl implements ChildrenService{
 	@Autowired
-	 ChildrenRepository childrenRepository;
+	 private ChildrenRepository childrenRepository;
 	@Autowired
-	 ChildrenOwnRepository childrenOwnRepository;
+	 private ChildrenOwnRepository childrenOwnRepository;
 	
 	@Override
 	public Children createChild(Children children) {
@@ -59,12 +59,6 @@ public class ChildrenServiceImpl implements ChildrenService{
 	public List<Children> getAllChildren() {
 		
 		return childrenOwnRepository.getAllChildren();
-	}
-
-	@Override
-	public void addChildToFamily(int id, int familyId) {
-		childrenOwnRepository.addChildToFamily(id, familyId);
-		
 	}
 
 }

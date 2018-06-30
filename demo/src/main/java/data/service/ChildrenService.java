@@ -13,6 +13,5 @@ public interface ChildrenService {
 	public Children getChildByPesel(String pesel);
 	public List<Children> getChildByData(String data);
 	public List<Children> getChildBySex(String sex);
-	void addChildToFamily(int id ,int familyId);
 	public List<Children> getAllChildren();
 }

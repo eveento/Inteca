@@ -10,6 +10,6 @@ import data.domain.Person;
 public interface FamilyService {
 
 	public Family createFamily(Family family);
-	public List<Person> getAllFromOneFamily(int id);
+	public List<Person> getAllFromOneFamily(int family);
 	
 }

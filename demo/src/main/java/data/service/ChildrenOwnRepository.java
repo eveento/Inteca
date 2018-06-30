@@ -31,10 +31,13 @@ public interface ChildrenOwnRepository extends Repository<Children, Long>{
 
     @Query(value = "from Children")
     List<Children> getAllChildren();
-    
+    /*
+    @Query(value = "")
+    Children createChild(@Param("child") Children child);
+    */
     @Modifying
     @Query(value="update Children x Set x.family=?2 where x.id=?1")
     void addChildToFamily(int id, int family);
     
-	
+   
 }

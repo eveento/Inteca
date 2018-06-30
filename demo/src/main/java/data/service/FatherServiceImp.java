@@ -12,13 +12,13 @@ import data.domain.Father;
 public class FatherServiceImp implements FatherService{
 
 	@Autowired
-	 FatherOwnRepository fatherOwnRepository;
+	 private FatherOwnRepository fatherOwnRepository;
 	@Autowired
-	 FatherRepository fatherRepository;
+	 private FatherRepository fatherRepository;
 	
 	@Override
-	public Father createFather(Father father) {
-		return fatherRepository.save(father);
+	public void createFather(Father father) {
+			fatherRepository.save(father);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class FatherServiceImp implements FatherService{
 	}
 
 	@Override
-	public Father getFatherByFamily(int family) {
+	public List<Father> getFatherByFamily(int family) {
 		
 		return fatherOwnRepository.getFatherByFamily(family);
 	}
@@ -50,11 +50,6 @@ public class FatherServiceImp implements FatherService{
 	@Override
 	public List<Father> getAllFathers() {
 		return fatherOwnRepository.getAllFathers();	
-	}
-
-	@Override
-	public void addFatherToFamily(int id, int family) {
-		 fatherOwnRepository.addFatherToFamily(id, family);
 	}
 
 }

@@ -18,7 +18,7 @@ public interface FatherOwnRepository extends Repository<Father, Long> {
     List<Father> getFatherBySurname(@Param("surname") String surname);
 	
     @Query(value = "from Father c where c.family=:family")
-    Father getFatherByFamily(@Param("family") int family);
+    List<Father> getFatherByFamily(@Param("family") int family);
     
     @Query(value="from Father c where c.pesel=:pesel")
     Father getFatherByPesel(@Param("pesel") String pesel);

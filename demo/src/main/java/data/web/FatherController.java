@@ -2,7 +2,9 @@ package data.web;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +16,23 @@ import data.service.FatherService;
 
 @RestController
 @RequestMapping("/father")
+@CrossOrigin(origins="*")
 public class FatherController {
 	
 	@Autowired
     private FatherService fatherService;
 
     @RequestMapping(value="", method=RequestMethod.POST)
-    public Father createFather(@RequestBody Father father){
-        return fatherService.createFather(father);
+    public void createFather(@RequestBody Father father){
+    	List<Father> fathersList = fatherService.getAllFathers();
+    	for	(int i = 0; i < fathersList.size(); i++)
+    	{
+    		if(fathersList.get(i).getFamily() == father.getFamily())
+    		{
+    			return;
+    		}
+    	}
+         fatherService.createFather(father);
     }
 
     @RequestMapping(value="", method=RequestMethod.GET)
@@ -40,7 +51,7 @@ public class FatherController {
     }
     
     @RequestMapping(value="/findbyfamily/{family}")
-    public Father getFatherByFamily(@PathVariable int family){
+    public List<Father> getFatherByFamily(@PathVariable int family){
         return fatherService.getFatherByFamily(family);
     }
     

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="sqlite_jdbc-164335c1501-78ed9f2630702e4b" provider="generic" driver="sqlite_jdbc" name="SQLite - qwe.sql" save-password="true" show-system-objects="true" read-only="false">
+		<connection server="" database="C:\Users\mrx\Desktop\Inteca\demo\test2.bd" url="jdbc:sqlite:C:\Users\mrx\Desktop\Inteca\demo\test2.bd" type="dev"/>
+	</data-source>
+	<filters/>
+</data-sources>

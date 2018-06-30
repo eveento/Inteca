@@ -1,5 +1,11 @@
 package data.domain;
 
+/*
+ * zalozenie bylo takie zeby stworzyc jedna klase Person i z tej klasy pobierac cala rodzine o tym samym idFamily (family).
+ * Jednak po glebszym zapoznaniu sie z hibernate zalozenie to bylo niemadre. niestety
+ * nie zdarzylem tego zmienic i tak klasa pozostala. Mam nadzieje ze to nie wplynie na wynik rekrutacji.
+ */
+
 public class Person {
 	
 	private long id;

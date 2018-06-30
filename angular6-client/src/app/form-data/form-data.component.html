@@ -1,0 +1,116 @@
+<div class="container">
+  <h1>Father</h1>
+  <form action="POST" #submitFather="ngForm" class="jumbotron" (ngSubmit)="submitFather">
+
+    <div class="form-group">
+      <label for="fatherName">Name</label>
+      <input required minlength="3" type="text" class="form-control" [(ngModel)]="fatherModel.name" name="fatherName" #fatherName="ngModel">
+      <div class="alert alert-danger" *ngIf="fatherName.touched && !fatherName.valid">
+        <div *ngIf="fatherName.errors.required">Name is required</div>
+        <div *ngIf="fatherName.errors.minlength">Name should be nimimum 3 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fatherSurame">Surname</label>
+      <input required minlength="2" type="text" class="form-control" [(ngModel)]="fatherModel.surname" name="fatherSurame" #fatherSurame="ngModel">
+      <div class="alert alert-danger" *ngIf="fatherSurame.touched && !fatherSurame.valid">
+        <div *ngIf="fatherSurame.errors.required">Surame is required</div>
+        <div *ngIf="fatherSurame.errors.minlength">Surame should be nimimum 2 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fatherPesel">Pesel</label>
+      <input required minlength="11" maxlength="11" type="text" class="form-control" [(ngModel)]="fatherModel.pesel" name="fatherPesel"
+        #fatherPesel="ngModel">
+      <div class="alert alert-danger" *ngIf="fatherPesel.touched && !fatherPesel.valid">
+        <div *ngIf="fatherPesel.errors.required">Pesel is required</div>
+        <div *ngIf="fatherPesel.errors.minlength">Pesel should consist of 11 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fatherData">Birth day</label>
+      <input required type="text" class="form-control" [(ngModel)]="fatherModel.data" name="fatherData" #fatherData="ngModel">
+      <div class="alert alert-danger" *ngIf="fatherData.touched && !fatherData.valid">
+        <div *ngIf="fatherData.errors.required">Birth day is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fatherFamily">Family</label>
+      <input required minlength="1" type="number" class="form-control" [(ngModel)]="fatherModel.family" name="fatherFamily" #fatherFamily="ngModel">
+      <div class="alert alert-danger" *ngIf="fatherFamily.touched && !fatherFamily.valid">
+        <div *ngIf="fatherFamily.errors.required">Family is required</div>
+        <div *ngIf="fatherFamily.errors.minlength">Family should consist of minimum 1 character</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!submitFather.form.valid" (click)="sendFather()">Submit</button>
+
+  </form>
+</div>
+
+<div class="container">
+  <h1>Child</h1>
+  <form action="POST" #submitChild="ngForm" class="jumbotron" (ngSubmit)="submitChild">
+
+    <div class="form-group">
+      <label for="childName">Name</label>
+      <input required minlength="3" type="text" class="form-control" [(ngModel)]="childModel.name" name="childName" #childName="ngModel">
+      <div class="alert alert-danger" *ngIf="childName.touched && !childName.valid">
+        <div *ngIf="childName.errors.required">Name is required</div>
+        <div *ngIf="childName.errors.minlength">Name should be nimimum 3 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="childSurame">Surname</label>
+      <input required minlength="2" type="text" class="form-control" [(ngModel)]="childModel.surname" name="childSurame" #childSurame="ngModel">
+      <div class="alert alert-danger" *ngIf="childSurame.touched && !childSurame.valid">
+        <div *ngIf="childSurame.errors.required">Surame is required</div>
+        <div *ngIf="childSurame.errors.minlength">Surame should be nimimum 2 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="childPesel">Pesel</label>
+      <input required minlength="11" maxlength="11" type="text" class="form-control" [(ngModel)]="childModel.pesel" name="childPesel"
+        #childPesel="ngModel">
+      <div class="alert alert-danger" *ngIf="childPesel.touched && !childPesel.valid">
+        <div *ngIf="childPesel.errors.required">Pesel is required</div>
+        <div *ngIf="childPesel.errors.minlength">Pesel should consist of 11 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="childData">Birth day</label>
+      <input required type="text" class="form-control" [(ngModel)]="childModel.data" name="childData" #childData="ngModel">
+      <div class="alert alert-danger" *ngIf="childData.touched && !childData.valid">
+        <div *ngIf="childData.errors.required">Birth day is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="childSex">Sex</label>
+      <input required minlength="3" type="text" class="form-control" [(ngModel)]="childModel.sex" name="childSex" #childSex="ngModel">
+      <div class="alert alert-danger" *ngIf="childSex.touched && !childSex.valid">
+        <div *ngIf="childSex.errors.required">Sex is required</div>
+        <div *ngIf="childSex.errors.minlength">Sex should consist of minimum 3 characters</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="childFamily">Family</label>
+      <input required minlength="1" type="number" class="form-control" [(ngModel)]="childModel.family" name="childFamily" #childFamily="ngModel">
+      <div class="alert alert-danger" *ngIf="childFamily.touched && !childFamily.valid">
+        <div *ngIf="childFamily.errors.required">Family is required</div>
+        <div *ngIf="childFamily.errors.minlength">Family should consist of minimum 1 character</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!submitChild.form.valid" (click)="sendChild()">Submit</button>
+
+  </form>
+</div>
